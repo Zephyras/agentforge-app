@@ -1,0 +1,24 @@
+name: agentforge_workspace
+repository: https://github.com/Zephyras/agentforge-app
+
+packages:
+  - apps/*
+  - packages/*
+
+command:
+  bootstrap:
+    usePubspecOverrides: true
+
+scripts:
+  analyze:
+    exec: flutter analyze
+    packageFilters:
+      flutter: true
+
+  test:
+    exec: flutter test
+    packageFilters:
+      dirExists: test
+
+  format:
+    exec: dart format .
